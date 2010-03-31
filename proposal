@@ -95,42 +95,62 @@ a single target.
       a.1) As coommand tool:
         % ls
             1eyx.pdb
-        % PDB-Tidy -if 1eyx.pdb  -renum --from X -of 1eyx_.pdb
+        % PDBTidy renumber --start=53 --chain=A -i 1eyx.pdb -o 1eyx_.pdb
         % ls
             1eyx.pdb    1eyx_.pdb
 
-        Ommiting the --from argument, it will use 1 as default value.
+        -Ommiting the --start argument, it will use 1 as default value.
+        -Ommiting the --chain argument, the renumber function will act over all
+         the chains.
+        -Ommiting the -i argument, the tool will use stdin (or pipe) to get the
+         data. Example:
+
+            % cat 1eyx.pdb | PDBTidy renumber -o 1eyx_.pdb
+
+        -Ommiting the -o argument, the tool will use stdout. Example:
+
+            % PDBTidy renumber -i 1eyx.pdb > 1eyx_.pdb
+
 
       a.2) As Biopython module:
-        >>> from Bio.PDB import *
-        >>> parser = PDBParser()
+        >>> import Bio
+        >>> parser = Bio.PDB.PDBParser()
         >>> structure = parser.get_structure("1EYX", "1eyx.pdb")
-        >>> ns = PDBTidy.renum_residues(structure, X)
-        >>> io = PDBIO()
+        >>> ns = Bio.PDB.PDBTidy.renum_residues(structure, X)
+        >>> io = Bio.PDB.PDBIO()
         >>> io.set_structure(ns)
         >>> io.save("1eyx_.pdb")
+
 
 
     b) Transform the PDB file into other format (e.g. fasta, pir):
       b.1) As command tool:
         % ls
             1eyx.pdb    1eyx_.pdb
-        % PDB-Tidy -if 1eyx_.pdb --to-fasta -of 1eyx_.fasta
+        % PDBTidy getsequence --format fasta -i 1eyx_.pdb > 1eyx_.fasta
         %ls
             1eyx.pdb    1eyx_.fasta    1eyx_.pdb
 
+        -You can add the --chanin argument to extract a specific chain.
+
+
       b.2) As Biopython module:
-        >>> from Bio.PDB import *
-        >>> parser = PDBParser()
+        >>> import Bio
+        >>> parser = Bio.PDB.PDBParser()
         >>> structure = parser.get_structure("1EYX", "1eyx_.pdb")
-        >>> nf = PDBTidy.to_fasta(structure)
+        >>> nf = Bio.PDB.PDBTidy.get_sequence(structure, format="fasta")
         >>> f = open("1eyx_.fasta", "w")
         >>> f.writelines( nf )
         >>> f.close()
 
+    As you can see PDBTidy is a sub-module that is included in the Bio.PDB
+    module.
 
 
-3.- Project schedule:
+
+
+
+4.- Project schedule:
 ----------------------
 
     This schedule was made according the official Google Summer of Code
@@ -165,7 +185,7 @@ August 16-20: Working with the mentor in the final evaluation.
 
 
 
-4.- Links:
+5.- Links:
 -----------
 
 [1] http://www.ubiobio.cl
@@ -183,7 +203,7 @@ August 16-20: Working with the mentor in the final evaluation.
 
 
 
-5.- Feedback:
+6.- Feedback:
 --------------
 
     Any question, comment or dissagreement? Don't doubt and send me an e-mail
