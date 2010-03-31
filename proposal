@@ -54,6 +54,7 @@ As you can see in my blog[4] I love programming.
     PDB-Tidy: A Command-line tool for manipulating PDB files. Based on the idea
 proposed by the mentor Eric Talevich[5][6].
 
+
 3.2.- Programming language:
     Python + Biopython module.
 
@@ -89,6 +90,7 @@ a single target.
 
     All these features will be available as command tool and as Biopython module
 
+
 3.5.- Brief example of the use of PDB-Tidy:
 
     a) Renumber residues starting from 1 (or N):
@@ -122,7 +124,6 @@ a single target.
         >>> io.save("1eyx_.pdb")
 
 
-
     b) Transform the PDB file into other format (e.g. fasta, pir):
       b.1) As command tool:
         % ls
@@ -147,10 +148,15 @@ a single target.
     module.
 
 
+3.6.- Other information about the idea:
+
+    The PDB-Tidy code will be released with the Biopython licence. In the
+development of the software I will use GitHub[7] to have the code into a
+public repository.
 
 
 
-4.- Project schedule:
+4.- Project schedule.
 ----------------------
 
     This schedule was made according the official Google Summer of Code
@@ -201,7 +207,7 @@ August 16-20: Working with the mentor in the final evaluation.
 
 [6] http://biopython.org/wiki/User:EricTalevich
 
-
+[7] http://www.github.com
 
 6.- Feedback:
 --------------
