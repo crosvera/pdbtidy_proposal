@@ -1,0 +1,191 @@
+    Proposal for PDB-Tidy: A Command-line tool for manipulating PDB files.
+===============================================================================
+
+1.- About the student.
+-----------------------
+
+    My name is Carlos Ríos, I'm from Concepción, Chile. I'm a Technical Engineer
+in Computer Sciences student at Universidad del Bío-Bio[1]. Currently I'm on
+my fourth year and I hope be graduated the first semester of next year.
+
+My interest in Bioinformatics begans the last year when I get involved in the
+Molecular Biophysics Lab at Universidad de Concepción[2] as a programmer
+(practising student). Here I realise that this field -bioinformatics- is where I
+have to stay.
+
+My interest in FLOSS (Free Libre Open Source Software) begans when I was in
+primary school, where a teacher showed me Mandrake Linux, that was my start
+point to be envolved in the FLOSS community. Currently I'm organizing the 11º
+Encuentro Linux (Chilean Linux Conf)[3]. I have also given some talks in other
+universities and institutes about the Linux Terminal Server Project like a
+alternative to use the old machines in Public Schools where the technological
+investment is very poor, and also other talks about the use of FLOSS.
+
+
+
+2.- About the student's skills.
+--------------------------------
+
+    I consider myself as a programmer who love to learn new staff, for that
+reason I want to be a bioinformatitian.
+
+The programming languages that I feel very confortable are: Python and C, but I
+can code in: PHP, C++, Java.
+
+In my workstation and house-station I use GNU/Linux (sometimes a *BSD flavour),
+so as you can see I have experience in the use of Unix likes systems.
+
+For web developing I use Python and the webpy[3] framework, In my time in the
+lab as practising student I had to work with python and the Biopython module,
+besides I used Pymol (as the GUI tool and as a python module). In the use of 
+Pymol I contributed in the package release in the linux distro that I use.
+
+About authored or contributed FLOSS project, in my lab we started a new project
+named VisualDEP, which should be a service released as a GPLv2 software.
+
+As you can see in my blog[4] I love programming.
+
+
+
+3.- About the project-idea you want propose.
+---------------------------------------------
+
+3.1.- Name of the idea:
+    PDB-Tidy: A Command-line tool for manipulating PDB files. Based on the idea
+proposed by the mentor Eric Talevich[5][6].
+
+3.2.- Programming language:
+    Python + Biopython module.
+
+
+3.3.- Abstract:
+
+    We know that the Proteing Data Bank and its PDB file format offers a huge
+amount of data that sometimes structural biologists can't handle easily and the
+currently available tools for work on it are ussually specialized for a single
+specific task (e.g. visualization, homology modelling). For that reason we
+introduce PDB-Tidy which is a Command Line tool and a Biopython module as well.
+PDB-Tidy enables you to perform PDB handling in a easy way (e.g. renumber
+residues), all in one package, you don't have to use several tools to perform
+a single target.
+
+
+3.4.- List of features:
+
+    a) Renumber residues starting from 1 (or N).
+    b) Transform the PDB file into other format (e.g. fasta, pir)
+    c) Read the PDB File and return information about the aminoacidic
+       composition and the molecular weight.
+    d) Check for incomplete amino acids.
+    e) Rename protein chains.
+    f) Split a chain or PDB file by adding the corresponding terminal oxigen.
+    g) Change the B-factor value for other scales like charge, exposition,
+       hydrophobicity; for then paint them in visualization tools.
+    h) In high resolution structures, with B-factor refinement, the anisotropic
+       values (6 values) transform them into one value.
+    i) Selecting an amino acid, show the neighbors in xÅ of it.
+    j) Generate a ramachandran plot of the protein.
+
+
+    All these features will be available as command tool and as Biopython module
+
+3.5.- Brief example of the use of PDB-Tidy:
+
+    a) Renumber residues starting from 1 (or N):
+      a.1) As coommand tool:
+        % ls
+            1eyx.pdb
+        % PDB-Tidy -if 1eyx.pdb  -renum --from X -of 1eyx_.pdb
+        % ls
+            1eyx.pdb    1eyx_.pdb
+
+        Ommiting the --from argument, it will use 1 as default value.
+
+      a.2) As Biopython module:
+        >>> from Bio.PDB import *
+        >>> parser = PDBParser()
+        >>> structure = parser.get_structure("1EYX", "1eyx.pdb")
+        >>> ns = PDBTidy.renum_residues(structure, X)
+        >>> io = PDBIO()
+        >>> io.set_structure(ns)
+        >>> io.save("1eyx_.pdb")
+
+
+    b) Transform the PDB file into other format (e.g. fasta, pir):
+      b.1) As command tool:
+        % ls
+            1eyx.pdb    1eyx_.pdb
+        % PDB-Tidy -if 1eyx_.pdb --to-fasta -of 1eyx_.fasta
+        %ls
+            1eyx.pdb    1eyx_.fasta    1eyx_.pdb
+
+      b.2) As Biopython module:
+        >>> from Bio.PDB import *
+        >>> parser = PDBParser()
+        >>> structure = parser.get_structure("1EYX", "1eyx_.pdb")
+        >>> nf = PDBTidy.to_fasta(structure)
+        >>> f = open("1eyx_.fasta", "w")
+        >>> f.writelines( nf )
+        >>> f.close()
+
+
+
+3.- Project schedule:
+----------------------
+
+    This schedule was made according the official Google Summer of Code
+schedule.
+
+April 26 - May 23: Get in touch with the mentors, read documentation, feed back,
+                   set up the environment of work.
+
+June 7: First modules released & feed back from the community about
+        the project.
+
+June 7: Documentation phase starts.
+
+June 21: Second release of PDB-Tidy modules, keeping the feedback from the 
+         community.
+
+June 28: First documentation release, how-to's and others.
+
+July 5: Third release of PDB-Tidy, I love the community because they give me
+        cools idea to add in the project.
+
+July 12-16: Working with the mentor in the evaluations.
+
+July 26: Fouth and final release.
+
+August 2: Final documentation release.
+
+August 15: Final patches in the software and documentation added.
+
+August 16-20: Working with the mentor in the final evaluation.
+
+
+
+
+4.- Links:
+-----------
+
+[1] http://www.ubiobio.cl
+
+[2] http://www.udec.cl
+
+[3] http://www.encuentrolinux.cl
+
+[4] http://crosvera.blogspot.com
+
+[5] http://biopython.org/wiki/Google_Summer_of_Code
+    #PDB-Tidy:_command-line_tools_for_manipulating_PDB_files
+
+[6] http://biopython.org/wiki/User:EricTalevich
+
+
+
+5.- Feedback:
+--------------
+
+    Any question, comment or dissagreement? Don't doubt and send me an e-mail
+to: crosvera at gmail dot com. You can also find me on IRC at irc.freenode.net
+and irc.cl as crosvera.
