@@ -38,9 +38,9 @@ In my workstation and house-station I use GNU/Linux (sometimes a *BSD flavour),
 so as you can see I have experience in the use of Unix likes systems.
 
 For web developing I use Python and the webpy[3] framework, In my time in the
-lab as practising student I had to work with python and the Biopython module,
-besides I used Pymol (as the GUI tool and as a python module). In the use of 
-Pymol I contributed in the package release in the linux distro that I use.
+lab as intern, I had to work with python and the Biopython module,
+besides I used PyMol (as a GUI tool and as python module). I have also
+contributed in the PyMol package distributed by the linux distro that I use.
 
 About authored or contributed FLOSS project, in my lab we started a new project
 named VisualDEP, which should be a service released as a GPLv2 software. In this
