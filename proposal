@@ -193,29 +193,78 @@ public repository.
     This schedule was made according the official Google Summer of Code
 schedule.
 
-April 26 - May 23: Get in touch with the mentors, read documentation, feed back,
-                   set up the environment of work.
+April 26 - May 23:
+    Tasks: - Collect PDB files that represent the future use cases e.g. PDB
+             files with incomplete amino acids.
+           - Read documentation about biopython modules involved in the PDB-Tidy
+             construction (Bio.PDB, Bio.SeqIO).
+           - Get in touch with the mentors and the biopython community to get
+             feedback from them.
 
-June 7: First modules released & feed back from the community about
-        the project.
 
-June 7: Documentation phase starts.
+May 24 - June 7:
+    Tasks: - Implement the 'renumber residues' feature [a] (see section 3.4).
+           - Implement the 'transform PDB to other format' feature [b] (see
+             section 3.4).
+           - Implement the 'return amino acid composition and molecular weight'
+             feature [c] (see section 3.4).
 
-June 21: Second release of PDB-Tidy modules, keeping the feedback from the 
-         community.
+    Goals: - Features a, b, c released (see above).
+           - Unit test for features a, b & c.
 
-June 28: First documentation release, how-to's and others.
 
-July 5: Third release of PDB-Tidy, I love the community because they give me
-        cools idea to add in the project.
+June 8 - 21:
+    Tasks: - Write documentation for a, b & c features.
+           - Implement the 'check for incomplete residues' feature [d] (see
+             section 3.4).
+           - Implement the 'rename protein chains' feature [e] (see section 3.4)
+           - Implement the 'split chains by adding the terminal oxygen' feature
+             [f] (see section 3.4).
+
+    Goals: - Features d, e, f released (see above).
+           - Unit test for features d, e & f.
+           - Documentation for features a, b & c.
+
+
+June 22 - July 5:
+    Tasks: - Write documentation for d, e & f features.
+           - Implement the 'change B-factor value for other scale' feature [g]
+             (see section 3.4).
+           - Implement the 'transform the anisotropic b-factor to isotropic'
+             feature [h] (see section 3.4).
+           - Implement the 'show the neighbors from a selected residue' feature
+             [i] (see section 3.4).
+
+    Goals: - Features g, h, i released (see above).
+           - Unit test for features g, h & i.
+           - Documentation for features d, e & f.
+
 
 July 12-16: Working with the mentor in the evaluations.
 
-July 26: Fouth and final release.
 
-August 2: Final documentation release.
+July 6-26:
+    Tasks: - Write documentation for g, h & features.
+           - Implement the 'generate a ramachandran plot of the protein' feature
+             [j] (see section 3.4).
 
-August 15: Final patches in the software and documentation added.
+    Goals: - Feature j released (see above).
+           - Unit test for feature j.
+           - Documentation for features g, h & i.
+
+
+July 27 - August 2:
+    Tasks: - Write documentation for i feature.
+
+    Goals: - Documentation for i feature.
+
+
+August 3-15: 
+    Tasks: - Get feedback from the community.
+           - Identify bugs.
+
+    Goals: - Patches for fix bugs in the software and documentation.
+
 
 August 16-20: Working with the mentor in the final evaluation.
 
