@@ -93,13 +93,13 @@ enable the convertion from PDB to those formats that SeqIO supports.
 e.g. SDS-PAGE analisys.
 
 #### d) Check for incomplete amino acids.
-
+<br />
 
 #### e) Rename protein chains.
-
+<br />
 
 #### f) Split a chain or PDB file by adding the corresponding terminal oxigen.
-
+<br />
 
 #### g) Change the B-factor value for other scales like charge, exposition, hydrophobicity; for then paint them in visualization tools.
   Some experiments sometimes has the need to add a new scale of values
@@ -107,7 +107,7 @@ by atom or residue, change the B-factor value by those values is a good
 alternative to display them in visualization tools.
 
 #### h) In high resolution structures, with B-factor refinement, the anisotropic values (6 values) transform them into one value.
-
+<br />
 
 #### i) Selecting an amino acid, show the neighbors in xÅ of it.
   The knowledge of the neighbors of an amino acid can help to know in
@@ -121,8 +121,8 @@ what environment is acting.
 
 ### 3.5.- Brief example of the use of PDB-Tidy:
 
-  a) Renumber residues starting from 1 (or N):
-   a.1) As coommand tool:
+#### a) Renumber residues starting from 1 (or N):
+#####  a.1) As coommand tool:
     % ls
         1eyx.pdb
     % PDBTidy renumber --start=53 --chain=A -i 1eyx.pdb -o 1eyx_.pdb
@@ -130,8 +130,10 @@ what environment is acting.
         1eyx.pdb    1eyx_.pdb
 
    -Ommiting the `--start` argument, it will use 1 as default value.
+
    -Ommiting the `--chain` argument, the renumber function will act over all the
    chains.
+
    -Ommiting the `-i` argument, the tool will use `stdin` (or `pipe`) to get the
    data. Example:
 
@@ -142,7 +144,7 @@ what environment is acting.
     % PDBTidy renumber -i 1eyx.pdb > 1eyx_.pdb
 
 
-  a.2) As Biopython module:
+##### a.2) As Biopython module:
     >>> import Bio
     >>> parser = Bio.PDB.PDBParser()
     >>> structure = parser.get_structure("1EYX", "1eyx.pdb")
@@ -151,8 +153,8 @@ what environment is acting.
     >>> io.set_structure(ns)
     >>> io.save("1eyx_.pdb")
 
-  b) Transform the PDB file into other format (e.g. fasta, pir):
-   b.1) As command tool:
+#### b) Transform the PDB file into other format (e.g. fasta, pir):
+#####  b.1) As command tool:
     % ls
         1eyx.pdb    1eyx_.pdb
     % PDBTidy getsequence --format fasta -i 1eyx_.pdb > 1eyx_.fasta
@@ -162,7 +164,7 @@ what environment is acting.
    -You can add the `--chain` argument to extract a specific chain.
 
 
-   b.2) As Biopython module:
+#####  b.2) As Biopython module:
     >>> import Bio
     >>> parser = Bio.PDB.PDBParser()
     >>> structure = parser.get_structure("1EYX", "1eyx_.pdb")
@@ -171,7 +173,7 @@ what environment is acting.
     >>> f.writelines( nf )
     >>> f.close()
 
-   As you can see PDBTidy is a sub-module that is included in the Bio.PDB
+   As you can see PDB-Tidy is a sub-module that is included in the Bio.PDB
    module.
 
 
@@ -190,79 +192,93 @@ public repository.
 schedule.
 
 #### April 26 - May 23:
-  Tasks: - Collect PDB files that represent the future use cases e.g. PDB
-           files with incomplete amino acids.
-         - Read documentation about biopython modules involved in the PDB-Tidy
-           construction (Bio.PDB, Bio.SeqIO).
-         - Get in touch with the mentors and the biopython community to get
-           feedback from them.
+#####  Tasks: 
+-    Collect PDB files that represent the future use cases e.g. PDB
+     files with incomplete amino acids.
+-    Read documentation about biopython modules involved in the PDB-Tidy
+     construction (Bio.PDB, Bio.SeqIO).
+-    Get in touch with the mentors and the biopython community to get
+     feedback from them.
 
 
 #### May 24 - June 7:
-  Tasks: - Implement the 'renumber residues' feature [a] (see section 3.4).
-         - Implement the 'transform PDB to other format' feature [b] (see
-           section 3.4).
-         - Implement the 'return amino acid composition and molecular weight'
-           feature [c] (see section 3.4).
+#####  Tasks: - Implement the 'renumber residues' feature [a] (see section 3.4).
+-    Implement the 'transform PDB to other format' feature [b] (see
+     section 3.4).
+-    Implement the 'return amino acid composition and molecular weight'
+     feature [c] (see section 3.4).
 
-  Goals: - Features a, b, c released (see above).
-         - Unit test for features a, b & c.
+#####  Goals:
+-    Features a, b, c released (see above).
+-    Unit test for features a, b & c.
 
 
 #### June 8 - 21:
-  Tasks: - Write documentation for a, b & c features.
-         - Implement the 'check for incomplete residues' feature [d] (see
-           section 3.4).
-         - Implement the 'rename protein chains' feature [e] (see section 3.4)
-         - Implement the 'split chains by adding the terminal oxygen' feature
-           [f] (see section 3.4).
+#####  Tasks:
+-    Write documentation for a, b & c features.
+-    Implement the 'check for incomplete residues' feature [d] (see
+     section 3.4).
+-    Implement the 'rename protein chains' feature [e] (see section 3.4)
+-    Implement the 'split chains by adding the terminal oxygen' feature
+     [f] (see section 3.4).
 
-  Goals: - Features d, e, f released (see above).
-         - Unit test for features d, e & f.
-         - Documentation for features a, b & c.
+#####  Goals: - Features d, e, f released (see above).
+-    Unit test for features d, e & f.
+-    Documentation for features a, b & c.
 
 
 #### June 22 - July 5:
-  Tasks: - Write documentation for d, e & f features.
-         - Implement the 'change B-factor value for other scale' feature [g]
-           (see section 3.4).
-         - Implement the 'transform the anisotropic b-factor to isotropic'
-           feature [h] (see section 3.4).
-         - Implement the 'show the neighbors from a selected residue' feature
-           [i] (see section 3.4).
+#####  Tasks:
+-    Write documentation for d, e & f features.
+-    Implement the 'change B-factor value for other scale' feature [g]
+     (see section 3.4).
+-    Implement the 'transform the anisotropic b-factor to isotropic'
+     feature [h] (see section 3.4).
+-    Implement the 'show the neighbors from a selected residue' feature
+     [i] (see section 3.4).
 
-  Goals: - Features g, h, i released (see above).
-         - Unit test for features g, h & i.
-         - Documentation for features d, e & f.
+#####  Goals: - Features g, h, i released (see above).
+-    Unit test for features g, h & i.
+-    Documentation for features d, e & f.
 
 
-#### July 12-16: Working with the mentor in the evaluations.
+#### July 12-16:
+#####  Tasks:
+-    Working with the mentor in the evaluations.
 
 
 #### July 6-26:
-  Tasks: - Write documentation for g, h & features.
-         - Implement the 'generate a ramachandran plot of the protein' feature
-           [j] (see section 3.4).
+#####  Tasks: 
+-    Write documentation for g, h & features.
+-    Implement the 'generate a ramachandran plot of the protein' feature
+     [j] (see section 3.4).
 
-  Goals: - Feature j released (see above).
-         - Unit test for feature j.
-         - Documentation for features g, h & i.
+#####  Goals:
+-    Feature j released (see above).
+-    Unit test for feature j.
+-    Documentation for features g, h & i.
 
 
 #### July 27 - August 2:
-  Tasks: - Write documentation for i feature.
+#####  Tasks:
+-    Write documentation for i feature.
 
-  Goals: - Documentation for i feature.
+#####  Goals:
+-    Documentation for i feature.
 
 
 #### August 3-15: 
-  Tasks: - Get feedback from the community.
-         - Identify bugs.
+#####  Tasks:
+-    Get feedback from the community.
+-    Identify bugs.
 
-  Goals: - Patches for fix bugs in the software and documentation.
+#####  Goals:
+-    Patches for fix bugs in the software and documentation.
 
 
-#### August 16-20: Working with the mentor in the final evaluation.
+#### August 16-20:
+#####  Tasks:
+-    Working with the mentor in the final evaluation.
 
 
 
