@@ -56,7 +56,7 @@ As you can see in my [blog][4] I love programming.
 
 ### 3.1.- Name of the idea:
   [PDB-Tidy: A Command-line tool for manipulating PDB files.][5] Based on the idea
-proposed by the mentor Eric Talevich[6].
+proposed by the mentor [Eric Talevich][6].
 
 
 ### 3.2.- Programming language:
@@ -77,16 +77,16 @@ a single target.
 
 ### 3.4.- List of features:
 
-a\.     Renumber residues starting from 1 (or N).
+a.     Renumber residues starting from 1 (or N).
         - When preparing structures for modeling or simulations, and sometimes
          when working with sequence alignments, it's useful to choose the
          starting residue numbers. Also, some PDB files are not numbered
          sequentially, so this can correct such files even without changing the
          starting residue number.
 
-  b) Transform the PDB file into other formats supported by biopython.
-      - The SeqIO module supports a large range of formats, PDB-Tidy will
-       enable the convertion from PDB to those formats that SeqIO supports.
+b.     Transform the PDB file into other formats supported by biopython.
+        - The SeqIO module supports a large range of formats, PDB-Tidy will
+         enable the convertion from PDB to those formats that SeqIO supports.
 
   c) Read the PDB File and return information about the aminoacidic
      composition and the molecular weight.
@@ -132,15 +132,15 @@ a\.     Renumber residues starting from 1 (or N).
     % ls
         1eyx.pdb    1eyx_.pdb
 
-   -Ommiting the --start argument, it will use 1 as default value.
-   -Ommiting the --chain argument, the renumber function will act over all
+   -Ommiting the `--start` argument, it will use 1 as default value.
+   -Ommiting the `--chain` argument, the renumber function will act over all
     the chains.
-   -Ommiting the -i argument, the tool will use stdin (or pipe) to get the
+   -Ommiting the `-i` argument, the tool will use `stdin` (or `pipe`) to get the
     data. Example:
 
     % cat 1eyx.pdb | PDBTidy renumber -o 1eyx_.pdb
 
-   -Ommiting the -o argument, the tool will use stdout. Example:
+   -Ommiting the `-o` argument, the tool will use stdout. Example:
 
     % PDBTidy renumber -i 1eyx.pdb > 1eyx_.pdb
 
@@ -162,7 +162,7 @@ a\.     Renumber residues starting from 1 (or N).
     %ls
         1eyx.pdb    1eyx_.fasta    1eyx_.pdb
 
-   -You can add the --chain argument to extract a specific chain.
+   -You can add the `--chain` argument to extract a specific chain.
 
 
    b.2) As Biopython module:
