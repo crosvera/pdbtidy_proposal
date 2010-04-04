@@ -5,19 +5,19 @@ Proposal for PDB-Tidy: A Command-line tool for manipulating PDB files.
 -----------------------
 
   My name is Carlos Ríos, I'm from Concepción, Chile. I'm a Technical Engineer
-in Computer Sciences student at Universidad del Bío-Bio[1]. Currently I'm on
+in Computer Sciences student at [Universidad del Bío-Bio][1]. Currently I'm on
 my fourth year and I expect to graduate by the first half of 2011.
 
 I'm particularly interested in bioinformatics. Since last year, I have been
-involved in several projects at the Molecular Biophysics Lab at the Universidad
-de Concepción[2], doing software development tasks as an intern. Here I realise
+involved in several projects at the Molecular Biophysics Lab at the [Universidad
+de Concepción][2], doing software development tasks as an intern. Here I realise
 that this field -bioinformatics- is where I have to stay. I have also taken the
 bioinformatic class the last semester, and this semester I will take a
 biochemestry class.
 
 My interest in FLOSS began when I was at primary school and one of our teachers
 showed us Mandrake Linux. Since then, I'm an active Linux user and also an
-organizer of "Encuentro Linux"[3] (one of largest Linux conferences in the
+organizer of ["Encuentro Linux"][3] (one of largest Linux conferences in the
 country). I have also given some talks in other universities and institutes
 about the Linux Terminal Server Project like a alternative to use the old
 machines in Public Schools where the technological investment is very poor, and
@@ -37,7 +37,7 @@ can code in: PHP, C++, Java.
 In my workstation and house-station I use GNU/Linux (sometimes a *BSD flavour),
 so as you can see I have experience in the use of Unix likes systems.
 
-For web developing I use Python and the webpy[3] framework, In my time in the
+For web developing I use Python and the [webpy][3] framework, In my time in the
 lab as intern, I had to work with python and the Biopython module,
 besides I used PyMol (as a GUI tool and as python module). I have also
 contributed in the PyMol package distributed by the linux distro that I use.
@@ -47,7 +47,7 @@ named VisualDEP, which should be a service released as a GPLv2 software. In this
 project we use several tools (PyMol, Biopython, pdb2pqr, APBS). So I can say
 that I have experience working with PDB files.
 
-As you can see in my blog[4] I love programming.
+As you can see in my [blog][4] I love programming.
 
 
 
@@ -55,8 +55,8 @@ As you can see in my blog[4] I love programming.
 ---------------------------------------------
 
 ### 3.1.- Name of the idea:
-  PDB-Tidy: A Command-line tool for manipulating PDB files. Based on the idea
-proposed by the mentor Eric Talevich[5][6].
+  [PDB-Tidy: A Command-line tool for manipulating PDB files.][5] Based on the idea
+proposed by the mentor Eric Talevich[6].
 
 
 ### 3.2.- Programming language:
@@ -77,12 +77,12 @@ a single target.
 
 ### 3.4.- List of features:
 
-  a) Renumber residues starting from 1 (or N).
-      - When preparing structures for modeling or simulations, and sometimes
-       when working with sequence alignments, it's useful to choose the
-       starting residue numbers. Also, some PDB files are not numbered
-       sequentially, so this can correct such files even without changing the
-       starting residue number.
+a\.     Renumber residues starting from 1 (or N).
+        - When preparing structures for modeling or simulations, and sometimes
+         when working with sequence alignments, it's useful to choose the
+         starting residue numbers. Also, some PDB files are not numbered
+         sequentially, so this can correct such files even without changing the
+         starting residue number.
 
   b) Transform the PDB file into other formats supported by biopython.
       - The SeqIO module supports a large range of formats, PDB-Tidy will
@@ -181,7 +181,7 @@ a single target.
 ### 3.6.- Other information about the idea:
 
   The PDB-Tidy code will be released with the Biopython licence. In the
-development of the software I will use GitHub[7] to have the code into a
+development of the software I will use [GitHub][7] to have the code into a
 public repository.
 
 
@@ -270,8 +270,13 @@ schedule.
 
 
 
-5.- Links:
------------
+5.- Feedback:
+--------------
+
+  Any question, comment or dissagreement? Don't doubt and send me an e-mail
+to: crosvera at gmail dot com. You can also find me on IRC at irc.freenode.net
+and irc.cl as crosvera.
+
 
 [1]: http://www.ubiobio.cl
 
@@ -287,9 +292,4 @@ schedule.
 
 [7]: http://www.github.com
 
-6.- Feedback:
---------------
 
-  Any question, comment or dissagreement? Don't doubt and send me an e-mail
-to: crosvera at gmail dot com. You can also find me on IRC at irc.freenode.net
-and irc.cl as crosvera.
