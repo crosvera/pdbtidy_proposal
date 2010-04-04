@@ -77,7 +77,7 @@ a single target.
 
 ### 3.4.- List of features:
 
-#### a) Renumber residues starting from 1 (or N).
+#### a) Renumber residues from a chain making them starting from N.
   When preparing structures for modeling or simulations, and sometimes
 when working with sequence alignments, it's useful to choose the
 starting residue numbers. Also, some PDB files are not numbered
@@ -86,11 +86,12 @@ starting residue number.
 
 #### b) Transform the PDB file into other formats supported by biopython.
   The SeqIO module supports a large range of formats, PDB-Tidy will
-enable the convertion from PDB to those formats that SeqIO supports.
+enable the convertion from the sequence that appears in the PDB file
+to those formats that SeqIO supports. *e.g. PDB to FASTA*.
 
 #### c) Read the PDB File and return information about the aminoacidic composition and the molecular weight.
   For some experiments is very useful this information.
-e.g. SDS-PAGE analisys.
+*e.g. SDS-PAGE analisys*.
 
 #### d) Check for incomplete amino acids.
 <br />
@@ -114,14 +115,14 @@ alternative to display them in visualization tools.
 what environment is acting.
 
 #### j) Generate a ramachandran plot of the protein.
-
+<br />
 
 *All these features will be available as command tool and as Biopython module.*
 
 
 ### 3.5.- Brief example of the use of PDB-Tidy:
 
-#### a) Renumber residues starting from 1 (or N):
+#### a) Renumber residues from a chain making them starting from N:
 #####  a.1) As coommand tool:
     % ls
         1eyx.pdb
@@ -188,8 +189,7 @@ public repository.
 4.- Project schedule.
 ----------------------
 
-  This schedule was made according the official Google Summer of Code
-schedule.
+  This schedule was made according the official [Google Summer of Code schedule][8].
 
 #### April 26 - May 23:
 #####  Tasks: 
@@ -202,10 +202,11 @@ schedule.
 
 
 #### May 24 - June 7:
-#####  Tasks: - Implement the 'renumber residues' feature [a] (see section 3.4).
--    Implement the 'transform PDB to other format' feature [b] (see
+#####  Tasks:
+-    Implement the _renumber residues_ feature [a] (see section 3.4).
+-    Implement the _transform PDB to other format_ feature [b] (see
      section 3.4).
--    Implement the 'return amino acid composition and molecular weight'
+-    Implement the _return amino acid composition and molecular weight_
      feature [c] (see section 3.4).
 
 #####  Goals:
@@ -216,13 +217,14 @@ schedule.
 #### June 8 - 21:
 #####  Tasks:
 -    Write documentation for a, b & c features.
--    Implement the 'check for incomplete residues' feature [d] (see
+-    Implement the _check for incomplete residues_ feature [d] (see
      section 3.4).
--    Implement the 'rename protein chains' feature [e] (see section 3.4)
--    Implement the 'split chains by adding the terminal oxygen' feature
+-    Implement the _rename protein chains_ feature [e] (see section 3.4)
+-    Implement the _split chains by adding the terminal oxygen_ feature
      [f] (see section 3.4).
 
-#####  Goals: - Features d, e, f released (see above).
+#####  Goals:
+-    Features d, e, f released (see above).
 -    Unit test for features d, e & f.
 -    Documentation for features a, b & c.
 
@@ -230,14 +232,15 @@ schedule.
 #### June 22 - July 5:
 #####  Tasks:
 -    Write documentation for d, e & f features.
--    Implement the 'change B-factor value for other scale' feature [g]
+-    Implement the _change B-factor value for other scale_ feature [g]
      (see section 3.4).
--    Implement the 'transform the anisotropic b-factor to isotropic'
+-    Implement the _transform the anisotropic b-factor to isotropic_
      feature [h] (see section 3.4).
--    Implement the 'show the neighbors from a selected residue' feature
+-    Implement the _show the neighbors from a selected residue_ feature
      [i] (see section 3.4).
 
-#####  Goals: - Features g, h, i released (see above).
+#####  Goals:
+-    Features g, h, i released (see above).
 -    Unit test for features g, h & i.
 -    Documentation for features d, e & f.
 
@@ -250,7 +253,7 @@ schedule.
 #### July 6-26:
 #####  Tasks: 
 -    Write documentation for g, h & features.
--    Implement the 'generate a ramachandran plot of the protein' feature
+-    Implement the _generate a ramachandran plot of the protein_ feature
      [j] (see section 3.4).
 
 #####  Goals:
@@ -291,6 +294,7 @@ to: crosvera at gmail dot com. You can also find me on IRC at irc.freenode.net
 and irc.cl as crosvera.
 
 
+
 [1]: http://www.ubiobio.cl
 
 [2]: http://www.udec.cl
@@ -305,4 +309,4 @@ and irc.cl as crosvera.
 
 [7]: http://www.github.com
 
-
+[8]: http://socghop.appspot.com/document/show/gsoc_program/google/gsoc2010/timeline
