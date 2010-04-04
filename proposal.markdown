@@ -77,49 +77,46 @@ a single target.
 
 ### 3.4.- List of features:
 
-a.     Renumber residues starting from 1 (or N).
-        - When preparing structures for modeling or simulations, and sometimes
-         when working with sequence alignments, it's useful to choose the
-         starting residue numbers. Also, some PDB files are not numbered
-         sequentially, so this can correct such files even without changing the
-         starting residue number.
+#### a) Renumber residues starting from 1 (or N).
+  When preparing structures for modeling or simulations, and sometimes
+when working with sequence alignments, it's useful to choose the
+starting residue numbers. Also, some PDB files are not numbered
+sequentially, so this can correct such files even without changing the
+starting residue number.
 
-b.     Transform the PDB file into other formats supported by biopython.
-        - The SeqIO module supports a large range of formats, PDB-Tidy will
-         enable the convertion from PDB to those formats that SeqIO supports.
+#### b) Transform the PDB file into other formats supported by biopython.
+  The SeqIO module supports a large range of formats, PDB-Tidy will
+enable the convertion from PDB to those formats that SeqIO supports.
 
-  c) Read the PDB File and return information about the aminoacidic
-     composition and the molecular weight.
-      - For some experiments is very useful this information.
-       e.g. SDS-PAGE analisys.
+#### c) Read the PDB File and return information about the aminoacidic composition and the molecular weight.
+  For some experiments is very useful this information.
+e.g. SDS-PAGE analisys.
 
-  d) Check for incomplete amino acids.
-
-
-  e) Rename protein chains.
+#### d) Check for incomplete amino acids.
 
 
-  f) Split a chain or PDB file by adding the corresponding terminal oxigen.
+#### e) Rename protein chains.
 
 
-  g) Change the B-factor value for other scales like charge, exposition,
-     hydrophobicity; for then paint them in visualization tools.
-      - Some experiments sometimes has the need to add a new scale of values
-       by atom or residue, change the B-factor value by those values is a good
-       alternative to display them in visualization tools.
-
-  h) In high resolution structures, with B-factor refinement, the anisotropic
-     values (6 values) transform them into one value.
+#### f) Split a chain or PDB file by adding the corresponding terminal oxigen.
 
 
-  i) Selecting an amino acid, show the neighbors in xÅ of it.
-      - The knowledge of the neighbors of an amino acid can help to know in
-       what environment is acting.
+#### g) Change the B-factor value for other scales like charge, exposition, hydrophobicity; for then paint them in visualization tools.
+  Some experiments sometimes has the need to add a new scale of values
+by atom or residue, change the B-factor value by those values is a good
+alternative to display them in visualization tools.
 
-  j) Generate a ramachandran plot of the protein.
+#### h) In high resolution structures, with B-factor refinement, the anisotropic values (6 values) transform them into one value.
 
 
-  All these features will be available as command tool and as Biopython module
+#### i) Selecting an amino acid, show the neighbors in xÅ of it.
+  The knowledge of the neighbors of an amino acid can help to know in
+what environment is acting.
+
+#### j) Generate a ramachandran plot of the protein.
+
+
+*All these features will be available as command tool and as Biopython module.*
 
 
 ### 3.5.- Brief example of the use of PDB-Tidy:
@@ -133,14 +130,14 @@ b.     Transform the PDB file into other formats supported by biopython.
         1eyx.pdb    1eyx_.pdb
 
    -Ommiting the `--start` argument, it will use 1 as default value.
-   -Ommiting the `--chain` argument, the renumber function will act over all
-    the chains.
+   -Ommiting the `--chain` argument, the renumber function will act over all the
+   chains.
    -Ommiting the `-i` argument, the tool will use `stdin` (or `pipe`) to get the
-    data. Example:
+   data. Example:
 
     % cat 1eyx.pdb | PDBTidy renumber -o 1eyx_.pdb
 
-   -Ommiting the `-o` argument, the tool will use stdout. Example:
+   -Ommiting the `-o` argument, the tool will use `stdout`. Example:
 
     % PDBTidy renumber -i 1eyx.pdb > 1eyx_.pdb
 
